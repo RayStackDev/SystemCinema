@@ -35,6 +35,23 @@ void mostrarPoltrona() {
 			cout << "\n\n";
 			
 			break;
+			
+		case 2:
+			for(int i = 0, i < 30, i++) {
+				if(i < 9)
+				   cout << i + 1 << "      ";
+				else 
+				   cout << i + 1 << "     ";
+				
+				for(int j = 0, j<30, j++) {
+				   cout << poltronas2[i][j] << "   ";
+				}
+				   cout << "\n";  
+			}
+			
+			cout << "       ";
+			
+			break;
 	}
 	
 	
