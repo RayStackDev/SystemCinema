@@ -51,6 +51,15 @@ void mostrarPoltrona() {
 			
 			cout << "       ";
 			
+			for(int i = 0, i < 30, i++0){
+				if(i < 9)
+				   cout << i + i << "   ";
+				else
+				   cout << i + 1 << "  ";
+			}
+			
+			cout << "\n\n";
+			
 			break;
 	}
 	
