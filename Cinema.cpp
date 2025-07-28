@@ -89,3 +89,17 @@ void mostrarPoltrona() {
 			break;
 	}
 }
+
+void marcarPoltronas(){
+	switch(filme) {
+		case 1:
+			poltronas1[linha[0] - 1][coluna[0] - 1] = '0';
+			break;
+		case 2;
+		    poltronas2[linha[1] - 1][coluna[1] - 1] = '0';
+		    break;
+		case 3;
+		    poltronas3[linha[2] - 1][coluna[2] - 1] = '0';
+		    break
+	}
+}
