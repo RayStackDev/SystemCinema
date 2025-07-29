@@ -117,3 +117,31 @@ void desfazerPoltrona(){
 			break;	
 	}
 }
+
+void verificarPoltronas() {
+	switch(filme) {
+		case 1:
+			if(poltronas1[0] - 1[coluna[0] - 1] == '-') {
+				cout << "\n\nEssa poltrona já está em uso.\n\n";
+				val = 1;
+			} else
+			    val = 0;
+			break;
+			
+		case 2:
+			if(poltronas2[linha[1] - 1[coluna[1] - 1] == '-') {
+				cout << "\n\nEssa poltrona já está em uso.\n\n";
+				val = 1;
+			} else
+			    val = 0;
+			break;
+			
+		case 3:
+			if(poltronas3[linha[2] - 1][coluna[2] - 1] == '-') {
+				cout << "\n\nEssa poltrona já está em uso.\n\n";
+				val = 1;
+			} else
+			    val = 0;
+			break;
+	}
+}
