@@ -103,3 +103,17 @@ void marcarPoltronas(){
 		    break
 	}
 }
+
+void desfazerPoltrona(){
+	switch(filme) {
+		case 1:
+			poltronas1[linha[0] - 1][coluna[0] - 1] = 'x';
+			break;
+		case 2:
+		    poltronas2[linha[1] - 1][coluna[1] - 1] = 'x';
+			break;
+		case 3:
+		    poltronas3[linha[2] - 1][coluna[2] - 1] = 'x';
+			break;	
+	}
+}
