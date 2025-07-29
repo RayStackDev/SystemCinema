@@ -29,7 +29,8 @@ void mostrarPoltrona() {
 		    	if(i < 9)
 		    	   cout << i + 1 << "   ";
 		    	
-		    	else << i + 1 << "  ";
+		    	else 
+				   cout << i + 1 << "  ";
 			}
 			
 			cout << "\n\n";
@@ -37,13 +38,13 @@ void mostrarPoltrona() {
 			break;
 			
 		case 2:
-			for(int i = 0, i < 30, i++) {
+			for(int i = 0; i < 30; i++) {
 				if(i < 9)
 				   cout << i + 1 << "      ";
 				else 
 				   cout << i + 1 << "     ";
 				
-				for(int j = 0; j < 30;++) {
+				for(int j = 0; j < 30; j++) {
 				   cout << poltronas2[i][j] << "   ";
 				}
 				   cout << "\n";  
@@ -51,7 +52,7 @@ void mostrarPoltrona() {
 			
 			cout << "       ";
 			
-			for(int i = 0; i < 30; i++0){
+			for(int i = 0; i < 30; i++){
 				if(i < 9)
 				   cout << i + i << "   ";
 				else
@@ -95,12 +96,12 @@ void marcarPoltronas(){
 		case 1:
 			poltronas1[linha[0] - 1][coluna[0] - 1] = '0';
 			break;
-		case 2;
+		case 2:
 		    poltronas2[linha[1] - 1][coluna[1] - 1] = '0';
 		    break;
-		case 3;
+		case 3:
 		    poltronas3[linha[2] - 1][coluna[2] - 1] = '0';
-		    break
+		    break;
 	}
 }
 
@@ -121,7 +122,7 @@ void desfazerPoltrona(){
 void verificarPoltronas() {
 	switch(filme) {
 		case 1:
-			if(poltronas1[0] - 1[coluna[0] - 1] == '-') {
+			if(poltronas1[linha[0] - 1][coluna[0] - 1] == '-') {
 				cout << "\n\nEssa poltrona já está em uso.\n\n";
 				val = 1;
 			} else
@@ -129,7 +130,7 @@ void verificarPoltronas() {
 			break;
 			
 		case 2:
-			if(poltronas2[linha[1] - 1[coluna[1] - 1] == '-') {
+			if(poltronas2[linha[1] - 1][coluna[1] - 1] == '-') {
 				cout << "\n\nEssa poltrona já está em uso.\n\n";
 				val = 1;
 			} else
@@ -142,6 +143,20 @@ void verificarPoltronas() {
 				val = 1;
 			} else
 			    val = 0;
+			break;
+	}
+}
+
+void mudarValor() {
+	switch(filme){
+		case 1:
+			poltronas1[linha[0] - 1][coluna[0] - 1] = '-';
+			break;
+		case 2:
+			poltronas2[linha[1] - 1][coluna[1] - 1] = '-';
+			break;
+		case 3:
+			poltronas3[linha[2] - 1][coluna[2] - 1] = '-';
 			break;
 	}
 }
