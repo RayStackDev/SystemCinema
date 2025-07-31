@@ -190,3 +190,37 @@ bool sessaoCheia() {
 	}
 	return true;
 }
+
+void trancarSessao() {
+	system("cls");
+	cout << "                                       -------------------------------------\n";
+	cout << "                                             QUAL SESSÃO DESEJA FECHAR\n";
+	cout << "                                       -------------------------------------\n";
+	cout << "                                          filme 1      filme 2	   filme 3\n\n";
+	cout << "                                            [1]          [2]          [3]\n\n";
+	cin >> filme;
+	
+	switch(filme){
+		case 1:
+			for(int i = 0; i < 30; i++){
+				for(int j = 0; j < 30; j++){
+					poltronas1[i][j] = '-';
+				}
+			}
+			break;
+		case 2:
+			for(int i = 0; i < 30; i++){
+				for(int j = 0; j < 30; j++){
+					poltronas2[i][j] = '-';
+				}
+			}
+			break;
+		case 3:
+			for(int i = 0; i < 30; i++){
+				for(int j = 0; j < 30; j++){
+					poltronas3[i][j] = '-';
+				}
+			}
+			break;
+	}
+}
