@@ -171,5 +171,22 @@ bool sessaoCheia() {
 				}
 			}
 	        break;
+	    case 2:
+	    	for(int i = 0; i < 30; i++){
+	    		for(int j = 0; j < 30; j++){
+	    			if(poltronas2[i][j] != '-')
+	    			return false;
+				}
+			}
+			break;
+		case 3:
+			for(int i = 0; i < 30; i++){
+				for(int j = 0; j < 30; j++){
+					if(poltronas3[i][j] != '-')
+					return false;
+				}
+			}
+			break;
 	}
+	return true;
 }
