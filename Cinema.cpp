@@ -160,3 +160,16 @@ void mudarValor() {
 			break;
 	}
 }
+
+bool sessaoCheia() {
+	switch(filme){
+		case 1:
+			for(int i = 0; i < 30; i++){
+				for(int j = 0; j <30; j++){
+					if(poltronas1[i][j] != '-')
+					return false;
+				}
+			}
+	        break;
+	}
+}
