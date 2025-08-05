@@ -6,7 +6,7 @@ using namespace std;
 char poltronas1[30][30], poltronas2[30][30], poltronas3[30][30];
 int filme, val, linha[3], coluna[3];
 
-void mostrarPoltrona() {
+void mostrarPoltrona(){
 	
 	switch(filme) {
 		
@@ -119,7 +119,7 @@ void desfazerPoltrona(){
 	}
 }
 
-void verificarPoltronas() {
+void verificarPoltronas(){
 	switch(filme) {
 		case 1:
 			if(poltronas1[linha[0] - 1][coluna[0] - 1] == '-') {
@@ -147,7 +147,7 @@ void verificarPoltronas() {
 	}
 }
 
-void mudarValor() {
+void mudarValor(){
 	switch(filme){
 		case 1:
 			poltronas1[linha[0] - 1][coluna[0] - 1] = '-';
@@ -161,7 +161,7 @@ void mudarValor() {
 	}
 }
 
-bool sessaoCheia() {
+bool sessaoCheia(){
 	switch(filme){
 		case 1:
 			for(int i = 0; i < 30; i++){
@@ -276,7 +276,7 @@ int main(){
 				cout << "                                       -------------------------------------\n";
 				cout << "                                                         TELA\n\n";
 				
-				void mostrarPoltronas();
+				mostrarPoltrona();
 				
 				do{
 					do{
@@ -297,8 +297,74 @@ int main(){
 						
 					}while(coluna[filme - 1] < 1 || coluna[filme - 1] > 30);
 					
-				}
-			}
-		}
-	}
+					verificarPoltronas();
+					
+					switch(filme){
+						case 1:
+							if(poltronas1[linha[0] - 1][coluna[0] - 1] != '-')
+							    marcarPoltronas();
+							break;
+						case 2: 
+						    if(poltronas2[linha[1] - 1][coluna[1] - 1] != '-')
+						        marcarPoltronas();
+						    break;
+						case 3: 
+						    if(poltronas3[linha[2] - 1][coluna[2] - 1] != '-')
+							    marcarPoltronas();
+						    break; 
+					}	
+				}while(val == 1);
+				
+				system("cls");
+				
+				cout << "                                       -------------------------------------\n";
+				cout << "                                                 ESCOLHA SUA POLTRONA\n";
+				cout << "                                       -------------------------------------\n";
+				cout << "                                                         TELA\n\n";
+				
+				mostrarPoltrona();
+				
+				do{
+					cout << "Tem certeza?\n\n";
+					cout << "[0]Sim   [1]Não\n\n";
+					cin >> val;
+					
+					if(val == 1) {
+						system("cls");
+						desfazerPoltrona();
+					}
+					else if(val != 0 && val != 1)
+					    cout << "\n\nNúmero invalido\n\n";
+					    
+				}while(val != 0 && val != 1);
+			}while(val == 1);
+			
+			val = 0;
+			
+			do{
+				cout << "Deseja adicionar outra poltrona?";
+				cout << "\n[0]Sim   [1]Não\n\n";
+				cin >> val;
+				
+				mudarValor();
+				
+				if(val != 0 && val != 1);
+				    cout << "\n\nNúmero invalido\n\n";
+				    
+			}while(val != 0 && val != 1);
+			
+		}while(val == 0);
+		
+		system("cls");
+		
+		cout << "\n\n                                       -------------------------------------\n";
+		cout << "                                                     BOM FILME\n";
+		cout << "                                       -------------------------------------\n";
+		
+		val = 1;
+		system("pause");
+		system("cls");
+	}while(val == 1);
+	
+	return 0;
 }
