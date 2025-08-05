@@ -283,7 +283,7 @@ int main(){
 						cout << "Digite a linha da sua poltrona: ";
 						cin >> linha[filme - 1];
 						
-						if(linha[filme - 1] < 1 || linha[filme - 1] > 30);
+						if(linha[filme - 1] < 1 || linha[filme - 1] > 30)
 						    cout << "\nNúmero inválido\n\n";
 						    
 					}while(linha[filme - 1] < 1 || linha[filme - 1] > 30);
