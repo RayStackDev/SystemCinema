@@ -15,7 +15,7 @@ void mostrarPoltrona() {
 				if (i < 9)
 				   cout << i + 1 << "       ";
 				else
-				   cout << i + 1 <<"      ";
+				   cout << i + 1 << "      ";
 	 	
 			    for(int j = 0; j < 30; j++){
 			       cout << poltronas1[i][j] << "   ";
@@ -222,5 +222,83 @@ void trancarSessao() {
 				}
 			}
 			break;
+	}
+}
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+	
+	for(int i = 0; i < 30; i++) {
+		for(int j = 0; j < 30; j++) {
+			poltronas1[i][j] = 'x';
+			poltronas2[i][j] = 'x';
+			poltronas3[i][j] = 'x';
+		}
+	}
+	
+	do {
+		do {
+			do{
+				cout << "                                       -------------------------------------\n";
+				cout << "                                                 ESCOLHA O FILME\n";
+				cout << "                                       -------------------------------------\n";
+				cout << "                                          filme 1      filme 2	   filme 3\n\n";
+				cout << "                                            [1]          [2]          [3]\n\n";
+				cin >> filme;
+				
+				if(filme != 1 && filme != 2 && filme != 3 && filme != 1234){
+					system("cls");
+					cout << "\n\n         Número inválido\n\n\n";
+					system("pause");
+					system("cls");
+				}
+				
+				else if (filme == 1234)
+				    trancarSessao();
+				    
+				else if (sessaoCheia()) {
+					cout << "\n\nA sessão selecionada está completamente cheia.\n\n\n\n\n             Escolha outro filme.\n\n";
+					system("pause");
+					system("cls");
+				}
+				system("cls");
+				
+			}while(filme != 1 && filme != 2 && filme != 3);
+			
+		}while(sessaoCheia());
+		
+		do{
+			system("cls");
+			
+			do{
+				cout << "                                       -------------------------------------\n";
+				cout << "                                                 ESCOLHA SUA POLTRONA\n";
+				cout << "                                       -------------------------------------\n";
+				cout << "                                                         TELA\n\n";
+				
+				void mostrarPoltronas();
+				
+				do{
+					do{
+						cout << "Digite a linha da sua poltrona: ";
+						cin >> linha[filme - 1];
+						
+						if(linha[filme - 1] < 1 || linha[filme - 1] > 30);
+						    cout << "\nNúmero inválido\n\n";
+						    
+					}while(linha[filme - 1] < 1 || linha[filme - 1] > 30);
+					
+					do{
+						cout << "Digite a coluna da sua poltrona: ";
+						cin >> coluna[filme - 1];
+						
+						if(coluna[filme - 1] < 1 || coluna[filme - 1] > 30)
+						    cout << "\n\nNúmero invalido\n\n";
+						
+					}while(coluna[filme - 1] < 1 || coluna[filme - 1] > 30);
+					
+				}
+			}
+		}
 	}
 }
