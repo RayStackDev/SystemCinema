@@ -86,7 +86,7 @@ void mostrarPoltrona(){
 			}
 			
 			cout << "\n\n";
-			
+		
 			break;
 	}
 }
